@@ -79,7 +79,7 @@
 		"optionsSorted":"Sorted {0}",
 		"optionsAppendable":"Appendable {0}",
 		"optionsShareable":"Shareable {0}",
-		"buttonAppend":"Append...",
+		"buttonAppend":"Own Option...",
 		"appendSendMe":"Now send me you vote option suggestion for the poll <b>{0}</b> (max. 120 chars)...",
 		"addOptionSuccess":"You have successfully added <b>{0}</b> as a vote option to the poll <b>{1}</b>",
 		"addOptionTooManyChars":"I only support up to 120 characters for vote options, you have entered <b>{0}</b>...",
