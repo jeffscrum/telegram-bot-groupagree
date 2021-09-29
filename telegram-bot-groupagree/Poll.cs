@@ -219,7 +219,8 @@ namespace telegrambotgroupagree {
 			string output = "";
 			int count = 0;
 			foreach (User user in users) {
-				output += "\u200E" + (count == users.Count - 1 ? "└" : "├") + " " + HtmlSpecialChars.Encode((user.FirstName + (user.LastName != null ? " " + user.LastName : "")).Replace("\u200F", "").Replace("\u202B", "").Replace("\u202E", "").Truncate(25)) + "\n";
+				string name = (user.FirstName + (user.LastName != null ? " " + user.LastName : "")).Replace("\u200F", "").Replace("\u202B", "").Replace("\u202E", "");
+				output += "\u200E" + (count == users.Count - 1 ? "└" : "├") + " " + "<a href=\"tg://user?id=" + user.Id.ToString() + "\">" + HtmlSpecialChars.Encode(name.Truncate(25)) + "</a>" + (user.Username != "" && name.Length < 6 ? " (<a href=\"tg://user?id=" + user.Id.ToString() + "\">@" + user.Username + "</a>)" : "") + "\n";
 				count++;
 			}
 			return output;
