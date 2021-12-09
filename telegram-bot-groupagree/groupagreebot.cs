@@ -77,6 +77,8 @@ namespace telegrambotgroupagree {
 
 		public async Task Run() {
             ulong beaconNum = 0;
+            try {
+                
 			while (!System.IO.File.Exists(@"cancer.wjdummy") && instances != null && instances.Count > 0) {
                 Console.WriteLine("beacon " + beaconNum++);
 				//TODO Check if this worked, apparently it does
@@ -1104,6 +1106,11 @@ namespace telegrambotgroupagree {
 				await dBHandler.UpdatePollsFromQueue(strings, instances);
 				currentInstance.update = Api.GetUpdatesAsync(currentInstance.apikey, offset);
 			}
+            
+            } catch (Exception e) {
+                Console.WriteLine(e.ToString());
+            }
+            
 			Notifications.log("The bot has been shut down properly...");
 		}
 	}
